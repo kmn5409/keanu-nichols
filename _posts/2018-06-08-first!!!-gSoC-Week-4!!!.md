@@ -25,7 +25,7 @@ Now over the past few weeks I've been working on generally tasks 1-2 and I belie
 Goal 1:
 Now this will generall be looking at two sets of files. The first one would be application.py and we will look specifically at the class Application(highlight) and the method piper(). Now as you can tell it's basically the same thing as the method ghtorrentplus (was it copying and pasting yes, yes it was). But I took me a bit to understand what it was doing before because I don't know if you can see but it actually calls the method ghtorrent inside it.
 
-{% highlight python %}
+{% highlight python  linenos %}
     def piper(self):
         from augur.PiperReader import PiperMail
         if self.__piper is None:
@@ -47,11 +47,104 @@ And then on line 125 we call the method piper() {% highlight python %} self.pipe
 Goal 2:
 The question you might be asking of course is so what is this for..... Don't worry I'm getting to it you just need to give me a little more time. So we move onto the next file which is where everything actually comes together and that's the jupyter notebook. So it's a bit of stuff going on here we have thing something called perceval which is used to retreieve data from a bunch of sources. Since I'm working with mailing lists we use something called Pipermail but it has other data sources such as we all know and love github and funny enough slack which is how I communicate with Sean and everyone at Augur. So I was using the opendaylight.org/pipermail and they had a bunch of mailing lists and so to iterate through some of them I created a list of the different ones. So then we send perceval on his task and it calls the Pipermail function which is a back in perceval and it downloads all the mail boxes int a folder called archives under another folder called temp. This would take a few minutes because some of the mailing lists were pretty long. I then have to iterate throught the messages, and just output it to a file.
 
-{% include PiperMail.md %}
+{% highlight python linenos %}
+import augur
+from augur.PiperReader import PiperMail
+
+# import everything from githubapi.py and ghtorrent.py so we can
+# just copy and paste our function later
+import json
+import pandas as pd
+from perceval.backends.core.pipermail import Pipermail
+import os, os.path
+
+# create an Augur application so we can test our function
+print(os.getcwd())
+if("notebooks" not in os.getcwd()):
+    os.chdir("notebooks")
+augurApp = augur.Application('../augur.config.json')
+print(os.getcwd())
+link = "https://lists.opendaylight.org/pipermail/"
+mail = ["aalldp-dev","aaa-dev","advisory-group","affinity-dev","alto-dev","archetypes-dev"]
+#print(os.getcwd())
+file = "opendaylight-"
+if "notebooks" in os.getcwd():
+    os.chdir("..")
+path = "/augur/data/opendaylight-" 
+for x in range(len(mail)):
+    #print(link+mail[x])
+    #print(os.getcwd())
+    #print(os.path.join(os.getcwd() + path+'.json'))
+    place = os.path.join(os.getcwd() + path + mail[x] +'.json')
+    if(os.path.exists(place)):
+        print(mail[x])
+        print("File Exists")
+        continue                   
+    repo = Pipermail(url = "https://lists.opendaylight.org/pipermail/"+ mail[x] + "/",dirpath="tmp/archives"+mail[x])
+    #print(repo)
+    outfile = open(place,"w+")
+    for message in repo.fetch():
+        obj = json.dumps(message, indent=4, sort_keys=True)
+        outfile.write(obj)
+        outfile.write('\n')
+    outfile.close()
+    print("Created File",mail[x])
+print("Finished downloading files")
+{% endhighlight %}
+
+
+{% highlight python linenos %}
+    2018-06-08 15:19:46 keanu-Inspiron-5567 perceval.backends.core.pipermail[1679] INFO Looking for messages from 'https://lists.opendaylight.org/pipermail/archetypes-dev/' since 1970-01-01 00:00:00+00:00
+    2018-06-08 15:19:46 keanu-Inspiron-5567 perceval.backends.core.pipermail[1679] INFO Downloading mboxes from 'https://lists.opendaylight.org/pipermail/archetypes-dev/' to since 1970-01-01 00:00:00+00:00
+
+
+    /home/keanu/temp/augur7/augur
+    /home/keanu/temp/augur7/augur/notebooks
+    aalldp-dev
+    File Exists
+    aaa-dev
+    File Exists
+    advisory-group
+    File Exists
+    affinity-dev
+    File Exists
+    alto-dev
+    File Exists
+
+
+    2018-06-08 15:19:48 keanu-Inspiron-5567 perceval.backends.core.pipermail[1679] INFO 1/1 MBoxes downloaded
+    2018-06-08 15:19:48 keanu-Inspiron-5567 perceval.backends.core.mbox[1679] INFO Done. 2/2 messages fetched; 0 ignored
+    2018-06-08 15:19:48 keanu-Inspiron-5567 perceval.backends.core.pipermail[1679] INFO Fetch process completed
+
+
+    Created File archetypes-dev
+    Finished downloading files
+{% endhighlight %}
+{% highlight python linenos %}
+temp = augurApp.piper()
+temp.make()
+print(temp)
+#temp.make()
+#print(temp.make)
+{% endhighlight %}
+
+
+{% highlight python linenos %}
+    ugh
+    Hey
+    File exists
+    File exists
+    File exists
+    File exists
+    File exists
+    File uploaded
+    Finished
+    <augur.PiperReader.PiperMail object at 0x7f2f6d148cf8>
+{% endhighlight %}
 
 Now we move onto the file PiperReader, this is called from the jupyter notebook and this first called by augurApp.piper and what this does is sent all the credentials you had to put a file called augur.config.json and that's how you connect to your sql database. Then we use temp.make() (I know my naming convention is amazing) which then go through each of the json files we created in the jupyter notebook and so what I do after is go through the files which is in the function read_json. Now I was wondering if there was a faster way to do this but to my knowledge and what I found through what I felt was a lotttttt of Googling was that because it was made up of a number of JSON objects Ijust have to iterate through the whole file and add it to a variable y and i seperated it by using a variable k which just helped me decide if the JSON object was going to close. The good thing is that I can now load this into a function called json.loads() which then allows me to select specific things easily. after we then just convert it to a pandas dataframe. My issue was that the threads in some of the messages were incredibly long so that's where I kind of cut off the thread but that's something I need to work on cause we kind want all those messages (lol). After it's as simple as using df.to_sql and upload it to the SQL database (the beauties of python).
 
-{% highlight python %}
+{% highlight python linenos %}
 import json
 import pandas as pd
 from sys import exit
