@@ -1,5 +1,8 @@
 ---
 layout: post
+categories: GSoC
+title: "First!!! GSoC Week 4!!!"
+date: 2018-06-08T10:20:00Z
 ---
 Welcome to my first post! I know it's now week 4 and I'm only now starting a blog, but you know better late than never. So I have to give props to my other fellow [GSoC](https://summerofcode.withgoogle.com/) (Google Summer of Code) developer at [CHAOSS](https://chaoss.community/) (Community Health Analytics Open Source Software) [Pranjal Aswani](https://aswanipranjal.github.io/) for having an amazing layout for his website which I think is a very good structure for talking about what happens each week.
 

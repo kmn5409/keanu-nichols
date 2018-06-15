@@ -25,6 +25,9 @@ linkedin_username: keanu-nichols
 # - username: jekyll2
 #   instance: example.com
 
+kramdown:
+  parse_block_html: true
+
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -44,3 +47,5 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+

@@ -182,6 +182,11 @@ table {
   table td {
     border: 1px solid #e8e8e8; }
 
+.img_container {
+  padding-bottom: 10%;
+  padding-right: 40%;
+  width: 300px; }
+
 /**
  * Site header
  */
