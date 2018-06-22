@@ -75,9 +75,10 @@ for i in range(len(archives)):
         j+=r
         if(j==len(x)):
             break
-        print("*"*40,"NEW SENTENCE","*"*40,"\n\n")
+        print("*"*40,"NEW MESSAGE","*"*40,"\n\n")
         di = json.loads(data)
     print("\n\n\n")
+    
 ```
 
     Hi Brian Kaczynski <kaczynskib at avaya.com>, Dennis Flynn <drflynn at avaya.com>,
@@ -91,7 +92,7 @@ for i in range(len(archives)):
     compound: 0.6369, neg: 0.0, neu: 0.417, pos: 0.583, 
     
     
-    **************************************** NEW SENTENCE **************************************** 
+    **************************************** NEW MESSAGE **************************************** 
     
     
     Hi AALLDP Team,
@@ -166,7 +167,7 @@ for i in range(len(archives)):
     compound: 0.296, neg: 0.0, neu: 0.932, pos: 0.068, 
     
     
-    **************************************** NEW SENTENCE **************************************** 
+    **************************************** NEW MESSAGE **************************************** 
     
     
     Hello archetypians,

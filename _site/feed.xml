@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-22T18:41:37-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols Blog</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-22T18:53:28-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols Blog</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
 </subtitle><author><name>Keanu Nichols</name></author><entry><title type="html">GSoC Week 6: I need some space</title><link href="http://localhost:4000/gsoc/2018/06/22/gsoc-Week-6.html" rel="alternate" type="text/html" title="GSoC Week 6: I need some space" /><published>2018-06-22T06:20:00-04:00</published><updated>2018-06-22T06:20:00-04:00</updated><id>http://localhost:4000/gsoc/2018/06/22/gsoc-Week-6</id><content type="html" xml:base="http://localhost:4000/gsoc/2018/06/22/gsoc-Week-6.html">&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 So it’s my third post, maybe I’m actually going to keep this up, wouldn’t that just be great, hopefully. I passed my first evaluation by the way! That made my day to be honest, especially because some people actually failed it due to issues with their mentor it seemed, so I’m very thankful that didn’t happen to me. Now this blog post is about improving some stuff in both the PiperReader python file and the jupyter notebook. We’re going to look at how to save some space, considering I didn’t care about it before, but that could be an issue when you try to download for example 1GB worth of emails, yeah it’s happened before. ALSO we will touch a little on some NLP (Natural Language Processing), sadly it’s in the very early stages but I’m pretty excited for it, I hope it goes well.&lt;/p&gt;
 
@@ -433,9 +433,10 @@ Finished downloading files
         &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;NEW SENTENCE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;NEW MESSAGE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;di&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hi Brian Kaczynski &amp;lt;kaczynskib at avaya.com&amp;gt;, Dennis Flynn &amp;lt;drflynn at avaya.com&amp;gt;,
@@ -449,7 +450,7 @@ An Ho
 compound: 0.6369, neg: 0.0, neu: 0.417, pos: 0.583, 
 
 
-**************************************** NEW SENTENCE **************************************** 
+**************************************** NEW MESSAGE **************************************** 
 
 
 Hi AALLDP Team,
@@ -524,7 +525,7 @@ URL: &amp;lt;http://lists.opendaylight.org/pipermail/archetypes-dev/attachments/
 compound: 0.296, neg: 0.0, neu: 0.932, pos: 0.068, 
 
 
-**************************************** NEW SENTENCE **************************************** 
+**************************************** NEW MESSAGE **************************************** 
 
 
 Hello archetypians,
