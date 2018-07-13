@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>GSoC Week 9: Oh you like drawing? | Keanu Nichols Blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="GSoC Week 9: Oh you like drawing?" />
+<meta name="author" content="Keanu Nichols" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up." />
+<meta property="og:description" content="To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up." />
+<link rel="canonical" href="http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html" />
+<meta property="og:url" content="http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html" />
+<meta property="og:site_name" content="Keanu Nichols Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-13T06:20:00-04:00" />
+<script type="application/ld+json">
+{"description":"To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up.","author":{"@type":"Person","name":"Keanu Nichols"},"@type":"BlogPosting","url":"http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html","headline":"GSoC Week 9: Oh you like drawing?","dateModified":"2018-07-13T06:20:00-04:00","datePublished":"2018-07-13T06:20:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Keanu Nichols Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Keanu Nichols Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/portfolio/">Porfolio</a><a class="page-link" href="/temp/">temp</a></div>
+      </nav></div>
+</header>
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>GSoC Week 9: Oh you like drawing? | Keanu Nichols Blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="GSoC Week 9: Oh you like drawing?" />
+<meta name="author" content="Keanu Nichols" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up." />
+<meta property="og:description" content="To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up." />
+<link rel="canonical" href="http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html" />
+<meta property="og:url" content="http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html" />
+<meta property="og:site_name" content="Keanu Nichols Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-13T06:20:00-04:00" />
+<script type="application/ld+json">
+{"description":"To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up.","author":{"@type":"Person","name":"Keanu Nichols"},"@type":"BlogPosting","url":"http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html","headline":"GSoC Week 9: Oh you like drawing?","dateModified":"2018-07-13T06:20:00-04:00","datePublished":"2018-07-13T06:20:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/gsoc/2018/07/13/gsoc-Week-9.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">GSoC Week 9: Oh you like drawing?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-07-13T06:20:00-04:00" itemprop="datePublished">Jul 13, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><br />
+To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up.</p>
+
+<p>So this week’s task with my mentor <a href="http://www.seangoggins.net/">Sean Goggins</a> is as follows:</p>
+
+<h1 id="goals-for-the-week">Goals for the week:</h1>
+<ol>
+  <li>Update the sentiment scores per message and store them in the database using NLTK.</li>
+  <li>Using Python or Augur, build a visualization of how the sentiment of messages evolves over time on a project mailing list or set of mailing lists.</li>
+  <li>Begin working with the “Toxicity Detection Team”</li>
+</ol>
+
+<p>#Back from the Grave</p>
+<ol>
+  <li>Include logic to keep track of the timestamp of the LAST message retrieved on each “load” …. add a “last_run” column to mailing_list_jobs, and then download only the mboxes not already included, and, for the oldest one, you will likely need to look for messages &gt; the “last_run” column timestamp. All the UTC conversions need to occur before this comparison …</li>
+</ol>
+
+<h2 id="goals">Goals</h2>
+
+<p>Goal 1:<br />
+So this was actually implemented <a href="">last week</a> and all I did was just check that it was correct, to my knowledge it is but you know overtime I’ll check it just to make sure.</p>
+
+<p>Goal 2:<br />
+Now this actually required writing some code but to be honest it wasn’t that tough, I think I spent more time getting the scores so after other things like creating visualizations really just meant taking the data that I had and just outputting it in different ways. So I created a simple line chart using matplotlib, as seen below I just use a for loop (lines 5-20) to group together the dates and the scores (lines 6 and 7)and use that to plot those values (line 13). It’s strange because for the first image it does it by months but for the second image it’s by days, I’m assuming that if it has too many days in the month it just groups the month together.</p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="n">grouped</span> <span class="o">=</span> <span class="n">combine</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'mailing_list'</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">mail_list</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">(</span><span class="n">combine</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">combine</span><span class="p">[</span><span class="s">'mailing_list'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">][</span><span class="s">'date'</span><span class="p">])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">(</span><span class="n">combine</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">combine</span><span class="p">[</span><span class="s">'mailing_list'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">][</span><span class="s">'score'</span><span class="p">])</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c">#print(dates)</span>
+    <span class="n">dates1</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">to_pydatetime</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
+    <span class="n">dates2</span> <span class="o">=</span> <span class="n">mdates</span><span class="o">.</span><span class="n">date2num</span><span class="p">(</span><span class="n">dates1</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">plot_date</span><span class="p">(</span><span class="n">dates2</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates2</span><span class="p">,</span><span class="n">values</span><span class="p">)</span>
+    <span class="c"># beautify the x-labels</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Mailing list: "</span> <span class="o">+</span> <span class="n">group</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Score'</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Date'</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p><img src="" alt="aalldp-dev" />
+<img src="" alt="archetypes-dev" /></p>
+
+<p>Goal 3:<br />
+Now for this I had to attend a meeting and what it is at least to my knowledge so far is to help pull examples of very toxic email and github issues to be used to detect toxicity in a community and when were the triggering events. I was given some examples as to some toxic events in some communities however the mailing archives I was looking at was hosted using something called Hypermail which is a problem because it this turns the emails which are in MBOX format to an html format. So it seems that I can’t use Pipermail from Perceval so I need to get that sorted out when I speak with Sean again. However I was able to pull github issues as seen below. I just need to clarify what I have to do next with these issues I know I have to put a score but do I have to create a new SQL table to store? Should get these answers soon enough. This code is in the jupyter notebook <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/Issues_pull.ipynb">Issues_pull</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">perceval.backends.core.github</span> <span class="kn">import</span> <span class="n">GitHub</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">dateutil.tz</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Url for the git repo to analyze</span>
+<span class="c">#repo_url = 'https://github.com/chaoss/grimoirelab-perceval'</span>
+<span class="n">repo_url</span> <span class="o">=</span> <span class="s">'CTC'</span>
+<span class="c"># Directory for letting Perceval clone the git repo</span>
+<span class="c">#repo_dir = 'CTC'</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s">'Insert_github_token_here'</span><span class="c">#I have my own token</span>
+<span class="n">own</span> <span class="o">=</span> <span class="s">'nodejs'</span>
+<span class="c"># ElasticSearch instance (url)</span>
+<span class="c">#repo = 'grimoirelab-perceval'</span>
+
+<span class="c"># Create the 'commits' index in ElasticSearch</span>
+<span class="c"># Create a Git object, pointing to repo_url, using repo_dir for cloning</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">GitHub</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="n">own</span><span class="p">,</span><span class="n">repository</span><span class="o">=</span><span class="n">repo_url</span><span class="p">,</span><span class="n">api_token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</code></pre></div></div>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">tzinfo</span><span class="o">=</span><span class="n">dateutil</span><span class="o">.</span><span class="n">tz</span><span class="o">.</span><span class="n">tzutc</span><span class="p">())</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">issues</span> <span class="ow">in</span> <span class="n">repo</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">from_date</span><span class="o">=</span><span class="n">date</span><span class="p">):</span>
+    <span class="c"># Create the object (dictionary) to upload to ElasticSearch</span>
+    <span class="c"># Create the object (dictionary) to upload to ElasticSearch</span>
+    <span class="c">#if(i==90):</span>
+    <span class="k">if</span> <span class="s">'pull_request'</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">[</span><span class="s">'data'</span><span class="p">]:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">issues</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'state'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'closed'</span> <span class="ow">and</span> <span class="s">"165"</span> <span class="ow">in</span> \
+           <span class="n">issues</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'comments_url'</span><span class="p">]</span> <span class="p">):</span> 
+            <span class="k">print</span><span class="p">(</span><span class="n">issues</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'body'</span><span class="p">])</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">issues</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'comments_data'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'body'</span><span class="p">][:</span><span class="mi">1000</span><span class="p">])</span>
+    <span class="c">#print(issues['data'][''])</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I'm not going to go into a rehash of all the details here. Our process guidelines require that in order to request that an individual be removed from the CTC an issue needs to be opened and put on the CTC agenda. So I'm officially asking that either Rod resign from the CTC voluntarily or a decision be made by the CTC to remove him on grounds that interactions with the community and with other members of the CTC and collaborator base have not been becoming of a CTC member.
+
+I do not believe that this decision needs to be deferred until after the proposed CTC/TSC merger but doing so would likely be best.
+
+Note: I am locking this thread to prevent outside trolling. I am also not going to respond further on this thread.
+
+
+
+
+_Dear reader from `${externalSource}`: I neither like nor support personal abuse or attacks. If you are showing up here getting angry at any party involved, I would ask you to refrain from targeting them, privately or in public. Specifically to people who think they may be supporting me by engaging in abusive behaviour: I do not appreciate, want or need it, in any form and it is not helpful in any way._
+
+Yep, this is a long post, but no apologies for the length this time. Buckle up.
+
+I'm sad that we have reached this point, and that the CTC is being asked to make such a difficult decision. One of the reasons that we initially split the TSC into two groups was to insulate the technical _doers_ on the CTC from the overhead of administrative and political tedium. I know many of you never imagined you'd have to deal with something like this when you agreed to join and that this is a very uncomfortable experience for you.
+
+It's obvious that we never figured out a suitable structure th
+</code></pre></div></div>
+
+<p>Goal 4:<br />
+We head back and look at what did I actually did not implement correctly with the most recent message download for the mailing archive. Now before I was ensuring that the emails that were being downloaded were more recent than when I first downloaded the emails I would store the most recent message. When I downloaded new messages I would store the most recent message date but I actually didn’t do anything with it. So now this week I actually went about updating the SQL table ‘mailing_list_jobs’ with the most recent date. A problem I had was when I pulled ‘mailing_list_jobs’ and tried to update a row, I was required to have a primary key, now before this I had no use for a primary key so I had to set one so I created a new column ‘augurlistID’ (line 15) and set that as the primary key (line 24). This is in <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperMail%209.ipynb">PiperMail</a></p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="code"><pre><span class="n">table_names</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">connect</span><span class="o">.</span><span class="n">db</span><span class="p">)</span><span class="o">.</span><span class="n">get_table_names</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">table_names</span><span class="p">)</span>
+<span class="n">val</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">mail_lists</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">if</span><span class="p">(</span><span class="s">"mail_lists"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table_names</span><span class="p">):</span>
+    <span class="n">mail_lists</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">if</span><span class="p">(</span><span class="s">"mailing_list_jobs"</span> <span class="ow">in</span> <span class="n">table_names</span><span class="p">):</span>
+    <span class="n">lists_createdSQL</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s">"""SELECT project FROM mailing_list_jobs"""</span><span class="p">)</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">lists_createdSQL</span><span class="p">,</span> <span class="n">connect</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">columns2</span> <span class="o">=</span> <span class="s">"augurlistID"</span><span class="p">,</span><span class="s">"backend_name"</span><span class="p">,</span><span class="s">"mailing_list_url"</span><span class="p">,</span><span class="s">"project"</span><span class="p">,</span><span class="s">"last_message_date"</span>
+    <span class="n">df_mail_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">columns2</span><span class="p">)</span>
+    <span class="n">df_mail_list</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"mailing_list_jobs"</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">connect</span><span class="o">.</span><span class="n">db</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s">'replace'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">'augurlistID'</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Integer</span><span class="p">(),</span>
+                               <span class="s">'backend_name'</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VARCHAR</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">300</span><span class="p">),</span>
+                               <span class="s">'mailing_list_url'</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VARCHAR</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">300</span><span class="p">),</span>
+                               <span class="s">'project'</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VARCHAR</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">300</span><span class="p">),</span>
+                               <span class="s">'last_message_date'</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">DateTime</span><span class="p">()</span>
+                        <span class="p">})</span>
+    <span class="n">lists_createdSQL</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s">"""SELECT project FROM mailing_list_jobs"""</span><span class="p">)</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">lists_createdSQL</span><span class="p">,</span> <span class="n">connect</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">connect</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"ALTER TABLE mailing_list_jobs ADD PRIMARY KEY (augurlistID)"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Created Table"</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>The next step was to go back to <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperReader%2015.py">PiperRead</a> and set it so that if the date of the newly downloaded messages is more recent than the one stored in ‘mailing_list_jobs’ then the most recent message date is updated to ‘last_date’ in the SQL table.</p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre> 
+<span class="k">if</span><span class="p">(</span><span class="n">last_date</span> <span class="o">&lt;</span> <span class="n">temp_date</span><span class="p">):</span>
+    <span class="n">last_date</span> <span class="o">=</span> <span class="n">temp_date</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">last_date</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">mail_check</span><span class="p">[</span><span class="n">archives</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">==</span> <span class="s">'update'</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"sigh"</span><span class="p">)</span>
+        <span class="n">y</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">project</span><span class="p">)</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">project</span><span class="o">!=</span><span class="n">archives</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">project</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">last_message_date</span> <span class="o">=</span> <span class="n">last_date</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>Resources:
+GSoC ideas (Specifically Ideas 2 &amp; 3): <a href="https://wiki.linuxfoundation.org/chaoss/gsoc-ideas">Ideas</a><br />
+My proposal: <a href="https://github.com/kmn5409/chaoss-microtasks/blob/master/GSoC-2018-Keanu-Nichols-CHAOSS-proposal.pdf">My proposal</a></p>
+
+<p>Files Used:
+Python File - <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperReader%2014.py">PiperRead 14</a><br />
+Jupyter Notebook - <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperMail%209.ipynb">PiperMail 9</a></p>
+
+<p>Jupyter Notebook - <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/NLP/Sentiment_Piper%207.ipynb">Sentiment_Piper 7</a></p>
+
+<p>Jupyter Notebook - <a href="https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/Issues_pull.ipynb">Issues_pull</a></p>
+
+
+  </div><a class="u-url" href="/gsoc/2018/07/13/gsoc-Week-9.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Keanu Nichols Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Keanu Nichols</li><li><a class="u-email" href="mailto:keanu.nichols@my.uwi.edu">keanu.nichols@my.uwi.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kmn5409"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kmn5409</span></a></li><li><a href="https://www.linkedin.com/in/keanu-nichols"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">keanu-nichols</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
