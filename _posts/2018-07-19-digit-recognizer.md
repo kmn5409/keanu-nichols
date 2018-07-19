@@ -292,6 +292,18 @@ print(df[:5])
 df.to_csv(file, index=False)
 {% endhighlight %}
 
+{% highlight python linenos %}
+digit = X_test.reshape(X_test.shape[0],28,28)
+print(ans[0])
+plt.subplot(221)
+plt.imshow(digit[i], cmap=plt.get_cmap('gray'))
+{% endhighlight %}
+
+{% highlight python lineos %}
+2
+{% endhighlight %}
+
+![digit](https://raw.githubusercontent.com/kmn5409/keanu-nichols/master/_includes/digit2.png)
 
 Our best score on Kaggle is 0.87914 but this can definitely be increased through different models.
 
