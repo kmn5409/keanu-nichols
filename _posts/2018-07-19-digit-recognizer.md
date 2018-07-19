@@ -5,7 +5,7 @@ date: 2018-07-19T10:20:00Z
 categories: Kaggle
 ---
 <br>
-So this blog post is actully going to be a little different because this has nothing to do with GSOC(Google Summer of Code) but well it could because some of the projects have to deal with NLP(Natural Language Processing) but for now we will be dealing with a competition relating to digit recognition. So essentially we want to teach the computer to be able to read hand written digits. The images generated are a 28 * 28 image that is in grey scale. Now working on the project was myself Keanu Nichols and [Akil Hosang]() we used a Neural Network approach and we tried to model it after the Coursera Machine Learning (ML) course by Andrew Ng. We did a very simple implentation by the way, it was for us to simply work on a problem since we were working on the ML course and wanted to get some actual experience working on a project so we looked to [Kaggle]() and one of the beginner projects was this. Overtime I hope we can improve the score of this approach which I believe is possible. So let's dive into it.
+So this blog post is actully going to be a little different because this has nothing to do with GSOC(Google Summer of Code) but well it could because some of the projects have to deal with NLP(Natural Language Processing) but for now we will be dealing with a competition relating to digit recognition. So essentially we want to teach the computer to be able to read hand written digits. The images generated are a 28 * 28 image that is in grey scale. Now working on the project was myself Keanu Nichols and [Akil Hosang](https://github.com/Akil313) we used a Neural Network approach and we tried to model it after the Coursera Machine Learning (ML) course by Andrew Ng. We did a very simple implentation by the way, it was for us to simply work on a problem since we were working on the ML course and wanted to get some actual experience working on a project so we looked to [Kaggle](https://www.kaggle.com/c/digit-recognizer) and one of the beginner projects was this. Overtime I hope we can improve the score of this approach which I believe is possible. So let's dive into it.
 
 
 First we go about importing our different modules as seen below, pandas is used for dataframes to store the pixels of the images and do a number of different operations. Matplotlib is used to actually see the image using the dataframes storing the pixels. Numpy is used to manipulate array to do things like transposing a matrix or multiplying two matrices. Random is used to give random numbers as will be seen in the function "randInit". And finally minimize which is an equivalent to fmincg in matlab which is used to train the actual Neural Network.
@@ -85,7 +85,7 @@ theta1 = theta2 = []
 theta1,theta2 = nn.randInit()
 {% endhighlight %}
 
-We first go out getting our values for epsilon, which was given by the [ML course]() (under Random Initialization), we split it for theta1 and theta2 that's why epsilon is a list of two values. We also add our bias unit. We then store our values for theta1 and theta2 by random initalization. It is more or less using what's in the course.
+We first go out getting our values for epsilon, which was given by the [ML course](https://www.coursera.org/learn/machine-learning/resources/EcbzQ) (under Random Initialization), we split it for theta1 and theta2 that's why epsilon is a list of two values. We also add our bias unit. We then store our values for theta1 and theta2 by random initalization. It is more or less using what's in the course.
 {% highlight python linenos %}
     def randInit(self):
         theta1 = []
@@ -296,15 +296,14 @@ df.to_csv(file, index=False)
 Our best score on Kaggle is 0.87914 but this can definitely be increased through different models.
 
 Resources:
-GSoC ideas (Specifically Ideas 2 & 3): [Ideas](https://wiki.linuxfoundation.org/chaoss/gsoc-ideas)<br>
-My proposal: [My proposal](https://github.com/kmn5409/chaoss-microtasks/blob/master/GSoC-2018-Keanu-Nichols-CHAOSS-proposal.pdf)
+[Coursera to python](https://github.com/arturomp/coursera-machine-learning-in-python/tree/master/mlclass-ex4-004/mlclass-ex4)
+
+[Andrew Ng Machine Learning](https://www.coursera.org/learn/machine-learning)
 
 
-Files Used:
-Python File - [PiperRead 12](https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperReader%2012.py#L149)<br>
-Jupyter Notebook - [PiperMail 8](https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperMail%208.ipynb)
+Files Used:<br>
+Jupyter Notebook - [digit_recognizer_blog_code](https://github.com/kmn5409/Digit-Recognizer/blob/master/digit_recognizer_blog_code.ipynb)
 
-Jupyter Notebook - [Sentiment_Piper 6](https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/NLP/Sentiment_Piper%206.ipynb)
 
 
 
