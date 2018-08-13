@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-10T16:57:11-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-13T09:58:38-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
 </subtitle><author><name>Keanu Nichols</name></author><entry><title type="html">GSoC Week 14: Opening New Doors</title><link href="http://localhost:4000/gsoc/2018/08/10/gsoc-Week-14.html" rel="alternate" type="text/html" title="GSoC Week 14: Opening New Doors" /><published>2018-08-10T06:20:00-04:00</published><updated>2018-08-10T06:20:00-04:00</updated><id>http://localhost:4000/gsoc/2018/08/10/gsoc-Week-14</id><content type="html" xml:base="http://localhost:4000/gsoc/2018/08/10/gsoc-Week-14.html">&lt;p&gt;&lt;br /&gt;
-So this is my final blog entry for GSoC (Google Summer of Code) (by now you really should know what that stands for but I’m a stickler for detail), wow it really has been around 4 months. Well I can say it has been a definite pleasure and don’t worry I don’t plan on stopping making blog entries because I still do plan on contributing to &lt;a href=&quot;&quot;&gt;CHAOSS&lt;/a&gt;. I even have my new assignment to work on, I will try to keep doing writing on what I’ve been doing but it may not be every week. Also I can’t forget to thank my mentor &lt;a href=&quot;&quot;&gt;Sean&lt;/a&gt; he really was just very helpful and understanding, I do hope he will be able to mentor other students for GSoC because they will learn a lot from this experience.&lt;/p&gt;
+So this is my final blog entry for GSoC (Google Summer of Code) (by now you really should know what that stands for but I’m a stickler for detail), wow it really has been around 4 months. Well I can say it has been a definite pleasure and don’t worry I don’t plan on stopping making blog entries because I still do plan on contributing to &lt;a href=&quot;https://chaoss.community/&quot;&gt;CHAOSS&lt;/a&gt;. I even have my new assignment to work on, I will try to keep doing writing on what I’ve been doing but it may not be every week. Also I can’t forget to thank my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean&lt;/a&gt; he really was just very helpful and understanding, I do hope he will be able to mentor other students for GSoC because they will learn a lot from this experience.&lt;/p&gt;
 
 &lt;p&gt;Now for this week’s blog entry we actually will be learning about how to go about running my code. There is an order as to how you go about running my code so let’s see if we can get this stuff running. I will be doing this guide as if I was going to run it which is on Ubuntu 16.04. You will most likely have to install some other libraries and I also had access to a ready made Database. There are other guides for OS X and Fedora but on Windows it may be a bit challenging (so I suggest just joining the fun side and join &lt;a href=&quot;https://en.wikipedia.org/wiki/Tux_(mascot)&quot;&gt;Tux&lt;/a&gt; aka get a Linux OS)&lt;/p&gt;
 
@@ -103,13 +103,47 @@ You &lt;span class=&quot;gs&quot;&gt;**CAN**&lt;/span&gt; get off the ground wit
 
 &lt;p&gt;Now the notes that I worked on were:&lt;br /&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;piper_reader&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;PiperMail&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Sentiment_Piper&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;github-issues&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;github_issues_scores&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;github_pull_requests&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;github_pull_requests_scores&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;piper_reader - 
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/08/first!!!-gSoC-Week-4!!!.html&quot;&gt;Week 4&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/15/gsoc-Week-5.html&quot;&gt;Week 5&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/22/gsoc-Week-6.html&quot;&gt;Week 6&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;PiperMail - &lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/08/first!!!-gSoC-Week-4!!!.html&quot;&gt;Week 4&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/15/gsoc-Week-5.html&quot;&gt;Week 5&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/22/gsoc-Week-6.html&quot;&gt;Week 6&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/29/gsoc-Week-7.html&quot;&gt;Week 7&lt;/a&gt;, 
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/06/gsoc-Week-8.html&quot;&gt;Week 8&lt;/a&gt;, 
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/13/gsoc-Week-9.html&quot;&gt;Week 9&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Sentiment_Piper - 
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/22/gsoc-Week-6.html&quot;&gt;Week 6&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/06/29/gsoc-Week-7.html&quot;&gt;Week 7&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/06/gsoc-Week-8.html&quot;&gt;Week 8&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/13/gsoc-Week-9.html&quot;&gt;Week 9&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;github-issues
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/13/gsoc-Week-9.html&quot;&gt;Week 9&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/20/gsoc-Week-10.html&quot;&gt;Week 10&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/27/gsoc-Week-11.html&quot;&gt;Week 11&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/03/gsoc-Week-12.html&quot;&gt;Week 12&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;github_issues_scores
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/20/gsoc-Week-10.html&quot;&gt;Week 10&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/07/27/gsoc-Week-11.html&quot;&gt;Week 11&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;github_pull_requests
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/03/gsoc-Week-12.html&quot;&gt;Week 12&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;github_pull_requests_scores
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/03/gsoc-Week-12.html&quot;&gt;Week 12&lt;/a&gt;,
+&lt;a href=&quot;https://kmn5409.github.io/keanu-nichols/gsoc/2018/08/10/gsoc-Week-13.html&quot;&gt;Week 13&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;So there are three different data sources that you can download and analyse. For each of them you will need to have ‘Database’ filled out (e.g. ‘host’, ‘name’ etc.)&lt;/p&gt;
@@ -138,6 +172,7 @@ You &lt;span class=&quot;gs&quot;&gt;**CAN**&lt;/span&gt; get off the ground wit
 &lt;p&gt;&lt;strong&gt;Remember you don’t need to run ‘Mailing Lists’ and then run ‘Github Issues’ or ‘Github Pull Requests’ they are all seperate from each other (well except they use the same database and information for the database).&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Resources:
+List of my commit to the branch pipermail: &lt;a href=&quot;https://github.com/OSSHealth/augur/commits/pipermail&quot;&gt;commits&lt;/a&gt;&lt;br /&gt;
 GSoC ideas (Specifically Ideas 2 &amp;amp; 3): &lt;a href=&quot;https://wiki.linuxfoundation.org/chaoss/gsoc-ideas&quot;&gt;Ideas&lt;/a&gt;&lt;br /&gt;
 My proposal: &lt;a href=&quot;https://github.com/kmn5409/chaoss-microtasks/blob/master/GSoC-2018-Keanu-Nichols-CHAOSS-proposal.pdf&quot;&gt;My proposal&lt;/a&gt;&lt;/p&gt;
 
