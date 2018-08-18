@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>CHAOSS - Augur: SentiCR | Keanu Nichols</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="CHAOSS - Augur: SentiCR" />
+<meta name="author" content="Keanu Nichols" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows." />
+<meta property="og:description" content="This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows." />
+<link rel="canonical" href="http://localhost:4000/augur/2018/08/10/Augur.html" />
+<meta property="og:url" content="http://localhost:4000/augur/2018/08/10/Augur.html" />
+<meta property="og:site_name" content="Keanu Nichols" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-10T06:20:00-04:00" />
+<script type="application/ld+json">
+{"description":"This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows.","author":{"@type":"Person","name":"Keanu Nichols"},"@type":"BlogPosting","url":"http://localhost:4000/augur/2018/08/10/Augur.html","headline":"CHAOSS - Augur: SentiCR","dateModified":"2018-08-10T06:20:00-04:00","datePublished":"2018-08-10T06:20:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/augur/2018/08/10/Augur.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Keanu Nichols" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Keanu Nichols</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/portfolio/">Porfolio</a><a class="page-link" href="/temp/">temp</a></div>
+      </nav></div>
+</header>
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>CHAOSS - Augur: SentiCR | Keanu Nichols</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="CHAOSS - Augur: SentiCR" />
+<meta name="author" content="Keanu Nichols" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows." />
+<meta property="og:description" content="This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows." />
+<link rel="canonical" href="http://localhost:4000/augur/2018/08/10/Augur.html" />
+<meta property="og:url" content="http://localhost:4000/augur/2018/08/10/Augur.html" />
+<meta property="og:site_name" content="Keanu Nichols" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-10T06:20:00-04:00" />
+<script type="application/ld+json">
+{"description":"This is my first blog entry for working at CHAOSS under Augur. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the research. So this week’s tasks with my mentor Sean is as follows.","author":{"@type":"Person","name":"Keanu Nichols"},"@type":"BlogPosting","url":"http://localhost:4000/augur/2018/08/10/Augur.html","headline":"CHAOSS - Augur: SentiCR","dateModified":"2018-08-10T06:20:00-04:00","datePublished":"2018-08-10T06:20:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/augur/2018/08/10/Augur.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">CHAOSS - Augur: SentiCR</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-08-10T06:20:00-04:00" itemprop="datePublished">Aug 10, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><br />
+<img src="http://www.augur.software/wp-content/uploads/resized/1349dbcf4e269409ee3643ea9f0fa20f/augur2.png" alt="augur" />
+This is my first blog entry for working at <a href="https://chaoss.community/">CHAOSS</a> under <a href="https://github.com/OSSHealth">Augur</a>. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the <a href="http://amiangshu.com/papers/senticr-ase.pdf">research</a>. So this week’s tasks with my mentor <a href="http://www.seangoggins.net/">Sean</a> is as follows.</p>
+
+<h1 id="goals-for-the-week">Goals for the week:</h1>
+<ol>
+  <li>Look at implementing SentiCR as the sentiment analysis tool for the messages.</li>
+</ol>
+
+<h2 id="goals">Goals</h2>
+
+<p><strong>Goal 1</strong>:<br />
+For this goal we have to look at replacing using NLTK as our main source of doing sentiment analysis. Now this doesn’t mean that we won’t be using nltk because it is still being used but this is through SentiCR. This uses a number of different models and determines which model (e.g. Niave Bayes, Linear Support Vector Classification, Gradient Boosting Tree (GBT)) performs best on the dataset which from the paper was the GBT.</p>
+
+<p>We first go about looking at the sentiment analysis for Pipermail for mailing lists. This resulted in me using a new jupyter notebook called <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/senticr_piper.ipynb">senticr_piper</a>. Now in general everything remained the same however some of my time was actually spent learning to use SentiCR because I am implementing it in python 3 it seems that it was more meant for python 2. So before it was doing <code class="highlighter-rouge">python for i, j in dic.iteritems():</code> which is used for python 2 but as seen below I changed it so that it could run for python 3.</p>
+
+<h4 id="senticr">SentiCR:</h4>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">replace_all</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">dic</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>Next I needed to decode the messages to ‘utf-8’ luckily someone responded to my <a href="https://github.com/senticr/SentiCR/issues/2">issue</a> for github, so before it wasn’t decoding it, I’m assuming maybe that is how it is for python 2 but it definitely didn’t work for python 3.</p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">preprocess_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">,</span> <span class="s">'ignore'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">expand_contractions</span><span class="p">(</span><span class="n">comments</span><span class="p">)</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">remove_url</span><span class="p">(</span><span class="n">comments</span><span class="p">)</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">replace_all</span><span class="p">(</span><span class="n">comments</span><span class="p">,</span> <span class="n">emodict</span><span class="p">)</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">handle_negation</span><span class="p">(</span><span class="n">comments</span><span class="p">)</span>
+
+    <span class="k">return</span>  <span class="n">comments</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<h4 id="jupyter-notebooks">Jupyter Notebooks:</h4>
+
+<p>I also had to learn about calling the class in my jupyter notebook which involved me importing SentiCR <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/senticr_piper.ipynb">senticr_piper</a> by switching my directory.</p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">if</span><span class="p">(</span><span class="s">"notebooks"</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">"../SentiCR"</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">SentiCR.SentiCR</span> <span class="kn">import</span> <span class="n">SentiCR</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>The only other part I changed with this jupyter notebook was that the sentiment analysis tool used was SentiCR.</p>
+
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">numb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s">'message_id'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">][</span><span class="s">'message_parts_tot'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s">'message_id'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">][</span><span class="s">'message_text'</span><span class="p">])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">message_text</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="c">#print(message_text)</span>
+        <span class="n">score</span><span class="o">=</span><span class="n">sentiment_analyzer</span><span class="o">.</span><span class="n">get_sentiment_polarity</span><span class="p">(</span><span class="n">message_text</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>Then I just did the same thing for the <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_issues_scores_senticr.ipynb">github issues</a> and then for the <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_pull_requests_scores_senticr.ipynb">pull requests</a>. Since it has the basic structure as when I did sentiment analysis using only NLTK (Natural Language Processing Toolkit) I won’t go into it.</p>
+
+<p>Resources:
+My branch on <a href="https://github.com/OSSHealth/augur/tree/pipermail">augur</a></p>
+
+<p>Files Used:
+Python File -  <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/SentiCR.py">SentiCR</a></p>
+
+<p>Jupyter Notebook - <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/senticr_piper.ipynb">senticr_piper</a></p>
+
+<p>Jupyter Notebook - <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_issues_scores_senticr.ipynb">github_issues_scores_senticr</a></p>
+
+<p>Jupyter Notebook - <a href="https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_pull_requests_scores_senticr.ipynb">github_pull_requests_scores_senticr</a></p>
+
+
+  </div><a class="u-url" href="/augur/2018/08/10/Augur.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Keanu Nichols</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Keanu Nichols</li><li><a class="u-email" href="mailto:keanu.nichols@my.uwi.edu">keanu.nichols@my.uwi.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kmn5409"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kmn5409</span></a></li><li><a href="https://www.linkedin.com/in/keanu-nichols"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">keanu-nichols</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
