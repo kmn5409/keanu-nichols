@@ -4,15 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+My name is Keanu Nichols and I am currently a undergraduate student at the [University of the West Indies](https://sta.uwi.edu/). I am a former [Google Summer of Code](https://summerofcode.withgoogle.com/projects/?sp-search=Keanu#5994949011570688) developer for [CHAOSS](https://chaoss.community/) A Linux Foundation Project, I am continuing my work with this organization under [Augur](https://github.com/OSSHealth/augur). Additionally I am doing research in Machine Learning with an organization known as [TTLAB](http://lab.tt/).
 
 
-[jekyll-organization]: https://github.com/jekyll
