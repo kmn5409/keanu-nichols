@@ -1,7 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-06T12:49:20-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
-</subtitle><author><name>Keanu Nichols</name></author><entry><title type="html">CHAOSS - Augur: Pipermail</title><link href="http://localhost:4000/augur/2018/08/25/Augur-Pipermail.html" rel="alternate" type="text/html" title="CHAOSS - Augur: Pipermail" /><published>2018-08-25T06:20:00-04:00</published><updated>2018-08-25T06:20:00-04:00</updated><id>http://localhost:4000/augur/2018/08/25/Augur-Pipermail</id><content type="html" xml:base="http://localhost:4000/augur/2018/08/25/Augur-Pipermail.html">&lt;p&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-29T20:29:25-04:00</updated><id>http://localhost:4000/</id><title type="html">Keanu Nichols</title><subtitle>A blog about Keanu Nichols for writing about his school/work experience and projects that he worked on.
+</subtitle><author><name>Keanu Nichols</name></author><entry><title type="html">CHAOSS - Augur: Pipermail Part 2</title><link href="http://localhost:4000/augur/2018/09/29/Augur-Pipermail-Part-2.html" rel="alternate" type="text/html" title="CHAOSS - Augur: Pipermail Part 2" /><published>2018-09-29T06:20:00-04:00</published><updated>2018-09-29T06:20:00-04:00</updated><id>http://localhost:4000/augur/2018/09/29/Augur-Pipermail-Part-2</id><content type="html" xml:base="http://localhost:4000/augur/2018/09/29/Augur-Pipermail-Part-2.html">&lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/kmn5409/keanu-nichols/master/_includes/augur2.png&quot; alt=&quot;augur&quot; /&gt;
-This is my second blog entry for working at &lt;a href=&quot;https://chaoss.community/&quot;&gt;CHAOSS&lt;/a&gt; under &lt;a href=&quot;https://github.com/OSSHealth&quot;&gt;Augur&lt;/a&gt;. This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests So this week’s tasks with my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean&lt;/a&gt; is as follows.&lt;/p&gt;
+This is my third blog entry for working at &lt;a href=&quot;https://chaoss.community/&quot;&gt;CHAOSS&lt;/a&gt; under &lt;a href=&quot;https://github.com/chaoss/augur&quot;&gt;Augur&lt;/a&gt;. I haven’t posted in awhile I know but well school has been hectic and I’ve been working on some other projects that I hope to speak about soon enough. But the past few weeks I have really been working on one main goal. So these past few week tasks with my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean&lt;/a&gt; are as follows.&lt;/p&gt;
+
+&lt;h1 id=&quot;goals-for-the-week&quot;&gt;Goals for the week:&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fix issue when downloading mailing lists from 2010 the program would go into a loop&lt;/li&gt;
+  &lt;li&gt;Upload mailing lists for gluster&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Goal 1&lt;/strong&gt;:&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;pipermail&quot;&gt;Pipermail&lt;/h4&gt;
+&lt;p&gt;For this goal what was happening was that I would try to download the mailing list &lt;a href=&quot;https://lists.gluster.org/pipermail/gluster-users/&quot;&gt;“gluter-users”&lt;/a&gt; and the program would seem to be going into a loop. So I would interrupt the program and then look at the SQL Database. What seemed to be happening was that the same messages were being uploaded repeatedly. After spending some time going through my code I discovered that I actually had a statement in my code. What was happening actually was that for example if I downloaded a large amount of messages say from the year 2010 to 2018 that’s maybe around 1000’s of emails. So my if statment (line 1) was supposed to upload the dataframe with the messages and then reset it. But what was actually happening was that I would just upload the dataframe (line 3) and then put more messages in the dataframe. I wasn’t emptying the dataframe. So thankfully I was able to get this out, I didn’t realize this before because I was only testing a small amount of messages so in the future I need to do some more rigurous testing.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;df5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;con&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;if_exists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'append'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The updated code is as seen below and I really need to remove line 6 lol because that can be misleading, I used that fors when I was testing.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;df5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;con&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;if_exists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'append'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Should not be here&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;df5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columns1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Goal 2&lt;/strong&gt;:&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;upload-mailing-lists&quot;&gt;Upload mailing lists&lt;/h4&gt;
+&lt;p&gt;So all I need to do is upload a bunch of messages from different mailing lists, it’s going to be a long process because it’s from quite 2010 so it will take a few hours especially if I’m going to do sentiment analysis on it using SentiCR.&lt;/p&gt;
+
+&lt;p&gt;Resources:
+My branch on &lt;a href=&quot;https://github.com/chaoss/augur/tree/pipermail&quot;&gt;augur&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Files Used:&lt;/p&gt;
+
+&lt;p&gt;Python File -  &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/piper_reader%201.py&quot;&gt;piper_reader 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Python File -  &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/piper_reader%203.py&quot;&gt;piper_reader 3&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">This is my third blog entry for working at CHAOSS under Augur. I haven’t posted in awhile I know but well school has been hectic and I’ve been working on some other projects that I hope to speak about soon enough. But the past few weeks I have really been working on one main goal. So these past few week tasks with my mentor Sean are as follows.</summary></entry><entry><title type="html">CHAOSS - Augur: Pipermail Part 1</title><link href="http://localhost:4000/augur/2018/08/25/Augur-Pipermail-Part-1.html" rel="alternate" type="text/html" title="CHAOSS - Augur: Pipermail Part 1" /><published>2018-08-25T06:20:00-04:00</published><updated>2018-08-25T06:20:00-04:00</updated><id>http://localhost:4000/augur/2018/08/25/Augur-Pipermail-Part-1</id><content type="html" xml:base="http://localhost:4000/augur/2018/08/25/Augur-Pipermail-Part-1.html">&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/kmn5409/keanu-nichols/master/_includes/augur2.png&quot; alt=&quot;augur&quot; /&gt;
+This is my second blog entry for working at &lt;a href=&quot;https://chaoss.community/&quot;&gt;CHAOSS&lt;/a&gt; under &lt;a href=&quot;https://github.com/OSSHealth&quot;&gt;Augur&lt;/a&gt;. This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests. So this week’s tasks with my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean&lt;/a&gt; is as follows.&lt;/p&gt;
 
 &lt;h1 id=&quot;goals-for-the-week&quot;&gt;Goals for the week:&lt;/h1&gt;
 &lt;ol&gt;
@@ -79,7 +140,7 @@ My branch on &lt;a href=&quot;https://github.com/OSSHealth/augur/tree/pipermail&
 
 &lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperMail%2014.ipynb&quot;&gt;PiperMail 14&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_pull_requests_scores_senticr%202.ipynb&quot;&gt;github_pull_requests_scores_senticr 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">This is my second blog entry for working at CHAOSS under Augur. This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests So this week’s tasks with my mentor Sean is as follows.</summary></entry><entry><title type="html">CHAOSS - Augur: SentiCR</title><link href="http://localhost:4000/augur/2018/08/18/Augur.html" rel="alternate" type="text/html" title="CHAOSS - Augur: SentiCR" /><published>2018-08-18T06:20:00-04:00</published><updated>2018-08-18T06:20:00-04:00</updated><id>http://localhost:4000/augur/2018/08/18/Augur</id><content type="html" xml:base="http://localhost:4000/augur/2018/08/18/Augur.html">&lt;p&gt;&lt;br /&gt;
+&lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/CHAOSS_Augur/blob/master/github_pull_requests_scores_senticr%202.ipynb&quot;&gt;github_pull_requests_scores_senticr 2&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">This is my second blog entry for working at CHAOSS under Augur. This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests. So this week’s tasks with my mentor Sean is as follows.</summary></entry><entry><title type="html">CHAOSS - Augur: SentiCR</title><link href="http://localhost:4000/augur/2018/08/18/Augur.html" rel="alternate" type="text/html" title="CHAOSS - Augur: SentiCR" /><published>2018-08-18T06:20:00-04:00</published><updated>2018-08-18T06:20:00-04:00</updated><id>http://localhost:4000/augur/2018/08/18/Augur</id><content type="html" xml:base="http://localhost:4000/augur/2018/08/18/Augur.html">&lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/kmn5409/keanu-nichols/master/_includes/augur2.png&quot; alt=&quot;augur&quot; /&gt;
 This is my first blog entry for working at &lt;a href=&quot;https://chaoss.community/&quot;&gt;CHAOSS&lt;/a&gt; under &lt;a href=&quot;https://github.com/OSSHealth&quot;&gt;Augur&lt;/a&gt;. Now I do believe that it’s important to keep this blog going because it helps me look over my work and go over what I’ve done and see if I made any mistakes. This week was focused on using SentiCR which is a Sentiment Analysis tool for Software Engineering Research. You can check out the &lt;a href=&quot;http://amiangshu.com/papers/senticr-ase.pdf&quot;&gt;research&lt;/a&gt;. So this week’s tasks with my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean&lt;/a&gt; is as follows.&lt;/p&gt;
 
@@ -2391,94 +2452,4 @@ Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/
 
 &lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/NLP/Sentiment_Piper%207.ipynb&quot;&gt;Sentiment_Piper 7&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/Issues_pull.ipynb&quot;&gt;Issues_pull&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up.</summary></entry><entry><title type="html">GSoC Week 8: What about the future?</title><link href="http://localhost:4000/gsoc/2018/07/06/gsoc-Week-8.html" rel="alternate" type="text/html" title="GSoC Week 8: What about the future?" /><published>2018-07-06T06:20:00-04:00</published><updated>2018-07-06T06:20:00-04:00</updated><id>http://localhost:4000/gsoc/2018/07/06/gsoc-Week-8</id><content type="html" xml:base="http://localhost:4000/gsoc/2018/07/06/gsoc-Week-8.html">&lt;p&gt;&lt;br /&gt;
-My fifth blog post, don’t worry this one is going to be pretty short. Maybe I’m giving you all a rest after last week, maybe….. So this week actually doesn’t have a week planned out per say, I just mostly worked on some things I needed to complete from last week.&lt;/p&gt;
-
-&lt;p&gt;So this week’s task with my mentor &lt;a href=&quot;http://www.seangoggins.net/&quot;&gt;Sean Goggins&lt;/a&gt; is as follows:&lt;/p&gt;
-
-&lt;h1 id=&quot;goals-for-the-week&quot;&gt;Goals for the week:&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Build a filter to disregard long attachments or included items …&lt;/li&gt;
-  &lt;li&gt;Do a simple sentiment analysis on each message.  &lt;em&gt;Perhaps keep the “score” in an additional column in the table.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Experiment with ways of filtering out old message strings from subsequent messages on the mailing lists and identifying mailing list discussion threads (some lists have them automatically, some don’t) … so, when you reply to an email, it often includes the text  you are responding to … it’s about getting rid off all the prior messages before the message at the top …&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
-
-&lt;p&gt;Goal 1:&lt;br /&gt;
-This is something I still am not entirely sure about how to do, so I will discuss it but I have been looking into it, the problem is how to disregard those long sections and then look at text after it. The section sizes could change.&lt;/p&gt;
-
-&lt;p&gt;Goal 2:&lt;br /&gt;
-I almost forgot that I did this, but this is what I believe was a better implementation for combining the two dataframes that have the initial table with all the messages “df_list” and then we have the dataframe with the scores “df3” (I might need to work on those names) and I simply combine them (line 5) into a new dataframe “combine”.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;combine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I then upload this as a new dataframe (line 1)(seen below). Of course the problem is what happens when you say for example have a SQL table with like 1 GB of messages, so will see how we can improve on that.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;combine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mail_lists_sentiment_scores'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;con&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;if_exists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'replace'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Goal 3:&lt;br /&gt;
-Now coming back from last week I was able to complete this task but the problem was that it wasn’t set for future messages. So if I were to download new messages it would still download all the messages that related to a thread, and we want it to disregard those messages and only download the email that had the full thread in it. So what I did was actually create a separate function on a whole to check for both new messages being downloaded or if it’s your first time downloading the mail archive. As seen below is the function “write_message” now it’s actually longer but I just copied the first section of it because the rest of the function is more or less the same. Now we first enter the for loop (line 4) to check through each message the reason I have this first part is to actually check to see if the messages being downloaded is being downloaded for the first time (lines 7,11 and 13) the first if statement ( line 7) checks if it’s not new, if it is it converts the date of that message to a datetime object (line 8) and then it goes into the next if statement (line 11) and see’s if it’s before the most recent message, if it it goes onto the next message (line 13). If it’s not it changes the dictionary “mail_check” (line 16) that stores the type of mailing list it is, for example it can be “False” meaning it doesn’t need to be updated, it could be “update” which I hope you know what it means (lol) and then it can be “new” meaning we have to add all the messages (In &lt;a href=&quot;http://127.0.0.1:4000/gsoc/2018/06/22/gsoc-Week-6.html&quot;&gt;Week 6&lt;/a&gt; previous post I spoke about using this dictionary and declaring it).&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type_archive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mail_check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;thread&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;#print(message,&quot;\n\n\n\n\n\n\n\n&quot;)&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;#print(message['data']['Message-ID'])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type_archive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'not_new'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mess_check&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Piper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;convert_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;#mess_check = Piper.convert_date(&quot;Thu, 24 Mar 2019 20:37:11 +0000&quot;)&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;#print(time)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type_archive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'not_new'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mess_check&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Right here&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;            
-        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type_archive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'not_new'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mess_check&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sigh&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mail_check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'update'&lt;/span&gt;
-            
-        &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Message-ID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Resources:
-GSoC ideas (Specifically Ideas 2 &amp;amp; 3): &lt;a href=&quot;https://wiki.linuxfoundation.org/chaoss/gsoc-ideas&quot;&gt;Ideas&lt;/a&gt;&lt;br /&gt;
-My proposal: &lt;a href=&quot;https://github.com/kmn5409/chaoss-microtasks/blob/master/GSoC-2018-Keanu-Nichols-CHAOSS-proposal.pdf&quot;&gt;My proposal&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Files Used:
-Python File - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperReader%2012.py#L149&quot;&gt;PiperRead 12&lt;/a&gt;&lt;br /&gt;
-Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/PiperMail%208.ipynb&quot;&gt;PiperMail 8&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/NLP/Sentiment_Piper%206.ipynb&quot;&gt;Sentiment_Piper 6&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">My fifth blog post, don’t worry this one is going to be pretty short. Maybe I’m giving you all a rest after last week, maybe….. So this week actually doesn’t have a week planned out per say, I just mostly worked on some things I needed to complete from last week.</summary></entry></feed>
+&lt;p&gt;Jupyter Notebook - &lt;a href=&quot;https://github.com/kmn5409/GSoC_CHAOSS/blob/master/Augur/Perceval/Issues_pull.ipynb&quot;&gt;Issues_pull&lt;/a&gt;&lt;/p&gt;</content><author><name>Keanu Nichols</name></author><summary type="html">To answer that the title no, I definitely don’t like drawing but if a computer does it for me then it’s fine (I still have some reservations even then). My sixth blog post, okay so it seems to be a thing that’ actually happening now, well that’s good to hear. So this week we actually have some visualisation this time, but mostly I was fixing something that I didn’t even realize was wrong until new messages for a mailing list for this month popped up.</summary></entry></feed>

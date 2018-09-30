@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "CHAOSS - Augur: Pipermail"
+title: "CHAOSS - Augur: Pipermail Part 1"
 date: 2018-08-25T10:20:00Z
 categories: Augur
 ---
 <br>
 ![augur](https://raw.githubusercontent.com/kmn5409/keanu-nichols/master/_includes/augur2.png)
-This is my second blog entry for working at [CHAOSS](https://chaoss.community/) under [Augur](https://github.com/OSSHealth). This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests So this week's tasks with my mentor [Sean](http://www.seangoggins.net/) is as follows.
+This is my second blog entry for working at [CHAOSS](https://chaoss.community/) under [Augur](https://github.com/OSSHealth). This week was mostly spent on fixing some issues that were popping up when trying to run my pipermail code and fixing an error that occurred when doing sentiment analysis on pull requests. So this week's tasks with my mentor [Sean](http://www.seangoggins.net/) is as follows.
 
 
 # Goals for the week:
